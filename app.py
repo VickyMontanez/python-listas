@@ -15,32 +15,32 @@ def crearSputnik():
     return grupoSputnik
 
 def listarGrupoSputnik(grupoSputnik):
-    print("Los campers son: ")
+    print("Los campers en Sputnik son: ")
     for camper in range(len(grupoSputnik)):
-        print("Camper:",(camper+1),grupoSputnik[camper], end=" ")
+        print("Camper ",(camper+1),grupoSputnik[camper], end=" ")
         print()
 
 def agregarSputnik(grupoSputnik):
     nombreNuevo = input("Digite el nombre del nuevo camper: ")
     grupoSputnik.append(nombreNuevo)
-    print("Se ha agregado exitosamente.")
+    print("Se ha agregado exitosamente a Sputnik")
 
-def eliminarArtemis(grupoArtemis):
+def eliminarSputnik(grupoSputnik):
     camperEli= input("Digite el nombre del camper que quieres eliminar: ")
-    for i in range(len(grupoArtemis)):
-        if camperEli == grupoArtemis[i]:
-            del grupoArtemis[i]
-            print("Se borró el usuario ",camperEli)
+    for i in range(len(grupoSputnik)):
+        if camperEli == grupoSputnik[i]:
+            del grupoSputnik[i]
+            print("Se borró el usuario ",camperEli," de Sputnik")
 
-def ordenarArtemis(grupoArtemis):
-    grupoArtemis.sort()
-    print(grupoArtemis)
+def ordenarSputnik(grupoSputnik):
+    grupoSputnik.sort()
+    print(grupoSputnik )
     
-def buscarArtemis(grupoArtemis):
+def buscarSputnik(grupoSputnik):
     camperBusca= input("Digite el nombre del camper que quieres encontrar: ")
-    for i in range(len(grupoArtemis)):
-        if camperBusca == grupoArtemis[i]:
-            print("El camper",camperBusca,"se encuentra en la lista")
+    for i in range(len(grupoSputnik)):
+        if camperBusca == grupoSputnik[i]:
+            print("El camper",camperBusca,"se encuentra en la lista de Sputnik")
 
 def crearArtemis():
     grupoArtemis = []
@@ -51,22 +51,22 @@ def crearArtemis():
     return grupoArtemis
 
 def listarGrupoArtemis(grupoArtemis):
-    print("Los campers son: ")
+    print("Los campers en Artemis son: ")
     for camper in range(len(grupoArtemis)):
-        print("Camper:",(camper+1),grupoArtemis[camper], end=" ")
+        print("Camper ",(camper+1),grupoArtemis[camper], end=" ")
         print()
 
 def agregarArtemis(grupoArtemis):
     nombreNuevo = input("Digite el nombre del nuevo camper: ")
     grupoArtemis.append(nombreNuevo)
-    print("Se ha agregado exitosamente.")
+    print("Se ha agregado exitosamente a Artemis")
 
 def eliminarArtemis(grupoArtemis):
     camperEli= input("Digite el nombre del camper que quieres eliminar: ")
     for i in range(len(grupoArtemis)):
         if camperEli == grupoArtemis[i]:
             del grupoArtemis[i]
-            print("Se borró el usuario ",camperEli)
+            print("Se borró el usuario ",camperEli," de Artemis")
 
 def ordenarArtemis(grupoArtemis):
     grupoArtemis.sort()
@@ -76,7 +76,7 @@ def buscarArtemis(grupoArtemis):
     camperBusca= input("Digite el nombre del camper que quieres encontrar: ")
     for i in range(len(grupoArtemis)):
         if camperBusca == grupoArtemis[i]:
-            print("El camper",camperBusca,"se encuentra en la lista")
+            print("El camper",camperBusca,"se encuentra en la lista de Artemis")
     
     
 """ Funciones """
@@ -113,5 +113,13 @@ while option != 0:
     elif(option == 2):
         grupoSputnik = crearSputnik()
     elif(option == 2.1):
-        listarGrupoArtemis(grupoArtemis)
+        listarGrupoSputnik(grupoSputnik)
+    elif(option == 2.2):
+        agregarSputnik(grupoSputnik)
+    elif(option == 2.3):
+        eliminarSputnik(grupoSputnik)
+    elif(option == 2.4):
+        ordenarSputnik(grupoSputnik)
+    elif(option == 2.5):
+        buscarSputnik(grupoSputnik)
         
