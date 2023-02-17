@@ -27,11 +27,13 @@ def listarFinalistas(finalistas):
 
 def campeon(marca,finalistas):
     print("El atleta campeón es: ")
-    for f,m in zip(finalistas, marca):   
-        if (m> 15,50):
-            finalistas.sort()
-            print(f[-1],max([int(i) for i in marca]))
-
+    finalistas.sort()
+    pos=max([int(i) for i in marca])
+    x=marca.index(pos)
+    print(f'{finalistas[x]} con {marca[x]} metros recorridos ')
+    print("GANADORA DE LA MEDALLA DE ORO")
+    if pos > 15.50:
+        print("ROMPIÓ EL RECORD! RECIBE 500 MILLONES!")
 
 option = -1
 while option != 0:
