@@ -15,7 +15,7 @@ def atletas():
     for i in range(f):
         nombre = input("Digite el nombre del atleta: ")
         finalistas.append(nombre)
-        saltos= input("Digite la marca del finalista (en metros): ")
+        saltos= float(input("Digite la marca del finalista (en metros): "))
         marca.append(saltos)
     return finalistas, marca
 
@@ -25,6 +25,14 @@ def listarFinalistas(finalistas):
         print(finalistas[i], marca[i])
         print()
 
+def campeon(marca,finalistas):
+    print("El atleta campeón es: ")
+    for f,m in zip(finalistas, marca):   
+        if (m> 15,50):
+            finalistas.sort()
+            print(f[-1],max([int(i) for i in marca]))
+
+
 option = -1
 while option != 0:
     print("---------------OLIMPICOS 2022-------------------")
@@ -32,11 +40,12 @@ while option != 0:
     print("OPCIONES A CONSULTAR: ")
     print("1. AGREGAR ATLETAS FINALISTAS")
     print("2. MOSTRAR INFORME DE CADA FINALISTA")
-    print("4. MOSTRAR ATLETA CAMPEÓN")
+    print("3. MOSTRAR ATLETA CAMPEÓN")
     option=int(input("Digite su opción: "))
 
     if option==1:
-        finalistas = atletas()
-        marca = atletas()
+        finalistas, marca = atletas()
     elif(option == 2):
         listarFinalistas(finalistas)
+    elif(option == 3):
+        campeon(marca,finalistas)
