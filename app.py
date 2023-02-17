@@ -84,13 +84,13 @@ def buscarArtemis(grupoArtemis):
 option = -1
 while option != 0:
     print("-----------------------MENU--------------------")
-    print("1.  CREAR GRUPO ARTEMIS:")
+    print("1.   CREAR GRUPO ARTEMIS:")
     print("1.1 LISTA CAMPERS DE ARTEMIS")
     print("1.2 AGREGAR CAMPERS A ARTEMIS")
     print("1.3 ELIMINAR CAMPERS A ARTEMIS")
     print("1.4 ORDENAR ALFABETICAMENTE EN LISTA DE ARTEMIS")
     print("1.5 BUSCAR CAMPER EN LISTA DE ARTEMIS")
-    print("2.  CREAR GRUPO SPUTNIK:")
+    print("2.   CREAR GRUPO SPUTNIK:")
     print("2.1 LISTA CAMPERS DE SPUTNIK")
     print("2.2 AGREGAR CAMPERS A SPUTNIK")
     print("2.3 ELIMINAR CAMPERS A SPUTNIK")
