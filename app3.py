@@ -17,7 +17,7 @@ def vuelta():
     sueldoBasico = []
     Nkilometros = []
     f = int(input("Cuantos ciclistas desea agregar?: "))
-    sueldo= float(input("Digite el sueldo básico: "))
+    sueldo= int(input("Digite el sueldo básico: "))
     sueldoBasico.append(sueldo)
     for i in range(f):
         nombre = input("Digite el nombre del ciclista: ")
@@ -30,8 +30,34 @@ def vuelta():
 def listarCiclistas(ciclista):
     print("Los ciclistas ingresados son: ")
     for i in range(len(ciclista)):
-        print(ciclista[i], Nkilometros[i])
+        print(ciclista[i],"con ", Nkilometros[i]," kilometros recorridos")
         print()
+
+def Calcularpaga(ciclista, sueldoBasico, Nkilometros):
+    Busca= input("Digite el ciclista que quieres consultar: ")
+    for i in range(len(ciclista)):
+        if Busca == ciclista[i]:
+            l= input("El ciclista tuvo la camisa de lider? (si/no): ")
+            if l == "si":
+                kl=int(input("Cuántos kilometros recorrió con la camisa de lider?: "))
+                if kl>1800:
+                    sueldoBase = [n * kl for n in sueldoBasico]
+                    lsueldo= sueldoBase + (sueldoBase*25)
+                    pos= Busca in ciclista
+                    x=ciclista.index(pos)
+                    print("El pago para el ciclista", x," es ", lsueldo)
+                elif kl<=1800:
+                    sueldoBase=kl*sueldoBasico
+                    pos= Busca in ciclista
+                    x=ciclista.index(pos)
+                    print("El pago para el ciclista", x," es ", sueldoBase)
+            elif l== "no":
+                csueldo = []
+                for x in Nkilometros:
+                    for y in sueldoBasico:
+                        csueldo.append(x*y)
+                print("El pago para el ciclista",x," es ", csueldo )
+        
 
 option = -1
 while option != 0:
@@ -47,4 +73,6 @@ while option != 0:
         ciclista, sueldoBasico, Nkilometros = vuelta()
     elif(option == 2):
         listarCiclistas(ciclista)
+    elif(option == 3):
+        Calcularpaga(ciclista, sueldoBasico, Nkilometros)
         
