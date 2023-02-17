@@ -4,7 +4,7 @@ developers, entre otros, por tal razón, ha solicitado el diseño de
 un programa que cuente con el siguiente menú como panel de
 control: """
 
-""" Funciones """
+""" Funciones spk"""
 
 def crearSputnik():
     grupoSputnik = []
@@ -41,7 +41,9 @@ def buscarSputnik(grupoSputnik):
     for i in range(len(grupoSputnik)):
         if camperBusca == grupoSputnik[i]:
             print("El camper",camperBusca,"se encuentra en la lista de Sputnik")
+""" Funciones spk"""
 
+""" Funciones art"""
 def crearArtemis():
     grupoArtemis = []
     n = int(input("Cuantos campers quiere ingresar a grupo Artemis?: "))
@@ -77,9 +79,7 @@ def buscarArtemis(grupoArtemis):
     for i in range(len(grupoArtemis)):
         if camperBusca == grupoArtemis[i]:
             print("El camper",camperBusca,"se encuentra en la lista de Artemis")
-    
-    
-""" Funciones """
+""" Funciones art"""
 
 option = -1
 while option != 0:
