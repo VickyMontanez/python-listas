@@ -39,24 +39,44 @@ def Calcularpaga(ciclista, sueldoBasico, Nkilometros):
         if Busca == ciclista[i]:
             l= input("El ciclista tuvo la camisa de lider? (si/no): ")
             if l == "si":
-                kl=int(input("Cuántos kilometros recorrió con la camisa de lider?: "))
-                if kl>1800:
-                    sueldoBase = [n * kl for n in sueldoBasico]
-                    lsueldo= sueldoBase + (sueldoBase*25)
-                    pos= Busca in ciclista
-                    x=ciclista.index(pos)
-                    print("El pago para el ciclista", x," es ", lsueldo)
-                elif kl<=1800:
-                    sueldoBase=kl*sueldoBasico
-                    pos= Busca in ciclista
-                    x=ciclista.index(pos)
-                    print("El pago para el ciclista", x," es ", sueldoBase)
+                    kl=int(input("Cuántos kilometros recorrió con la camisa de lider?: "))
+                    if kl>1800:
+                            sueldoBase = [n * kl for n in sueldoBasico]
+                            lsueldo= [s * 1.25 for s in sueldoBase]
+                            pos= Busca in ciclista
+                            psueldo= []
+                            for x in Nkilometros:
+                                    for y in sueldoBasico:
+                                        psueldo.append(x*y)
+                            tsueldo= []
+                            for i in psueldo:
+                                for a in lsueldo:
+                                    tsueldo.append(i+a)
+                                    print("El pago especial para el ciclista es ", lsueldo)
+                                    print("El pago total para el ciclista es ", tsueldo)
+                    elif kl<=1800:
+                            pos= Busca in ciclista
+                            csueldo = []
+                            for x in Nkilometros:
+                                for y in sueldoBasico:
+                                    csueldo.append(x*y)
+                                    print("El pago para el ciclista es ", csueldo)
             elif l== "no":
-                csueldo = []
-                for x in Nkilometros:
-                    for y in sueldoBasico:
-                        csueldo.append(x*y)
-                print("El pago para el ciclista",x," es ", csueldo )
+                    pos= Busca in ciclista
+                    usueldo = []
+                    for x in Nkilometros:
+                        for y in sueldoBasico:
+                            usueldo.append(x*y)
+                    print("El pago para el ciclista es ", usueldo )
+
+def ganador(ciclista, Nkilometros):
+    print("El ciclista campeón es ")
+    ciclista.sort()
+    pos=max([int(i) for i in Nkilometros])
+    x=Nkilometros.index(pos)
+    print(f'{ciclista[x]} con {Nkilometros[x]} kilometros recorridos ')
+    print("¡GANADOR DE LA VUELTA ESPAÑA!")
+    print("¡RECIBE 700 MILLONES!")
         
 
 option = -1
@@ -75,4 +95,6 @@ while option != 0:
         listarCiclistas(ciclista)
     elif(option == 3):
         Calcularpaga(ciclista, sueldoBasico, Nkilometros)
+    elif(option == 4):
+        ganador(ciclista, Nkilometros)
         
