@@ -39,4 +39,4 @@ for i in range(n):
             if(int(almacen[k][2])> mayorValor):
                 posicionMayor = j
                 mayorValor = int(almacen[k][2])
-print("El amlacen que más vendió fue "+ almacen[posicionMayor][0], "con " + str(mayorValor)+ " articulos")
+print("El almacen que más vendió fue "+ almacen[posicionMayor][0], "con " + str(mayorValor)+ " articulos")
